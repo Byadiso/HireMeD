@@ -12,7 +12,6 @@ on:
   pull_request:
     branches:
       - main
-
   
   schedule:
     - cron: '*/30 * * * *' 
@@ -53,7 +52,8 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add job_listings.xlsx
-        # [skip ci] prevents the 'push' from this step from triggering another run
+        
+        git add -f job_listings.xlsx 
+        
         git commit -m "auto: update job listings [skip ci]" || exit 0
         git push
