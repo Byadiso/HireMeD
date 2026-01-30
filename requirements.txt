@@ -1,0 +1,8 @@
+requests
+pandas
+playwright
+scikit-learn
+PyPDF2
+python-dotenv
+deep-translator
+openpyxl
