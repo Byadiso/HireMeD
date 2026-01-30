@@ -17,7 +17,7 @@ with st.sidebar:
     if os.path.exists(resume_file):
         with open(resume_file, "rb") as f:
             st.download_button(
-                label="📄 Check out or Download my CV",
+                label="📄 Get My Resume(PDF)",
                 data=f.read(),
                 file_name="Candidate_Resume.pdf",
                 mime="application/pdf"
