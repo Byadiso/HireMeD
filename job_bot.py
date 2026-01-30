@@ -9,10 +9,9 @@ import PyPDF2
 from dotenv import load_dotenv
 from deep_translator import GoogleTranslator
 
-# Load local .env (only used when running on your computer)
 load_dotenv()
 
-# --- CONFIGURATION ---
+
 ADZUNA_APP_ID = os.getenv("ADZUNA_APP_ID")
 ADZUNA_APP_KEY = os.getenv("ADZUNA_APP_KEY")
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -22,7 +21,6 @@ RESUME_PATH = "my_resume.pdf"
 EXCEL_FILE = "job_listings.xlsx"
 COUNTRY_CODE = "pl" 
 
-# --- 1. NLP & TRANSLATION ---
 def get_resume_text(path):
     try:
         with open(path, 'rb') as f:
@@ -45,20 +43,18 @@ def get_match_score(resume_text, job_desc):
         vectors = vectorizer.fit_transform([resume_text, translated_desc])
         base_score = cosine_similarity(vectors)[0][1] * 100
 
-        # Technical Keyword Boost
         boost_keywords = ["python", "sql", "active directory", "linux", "helpdesk", "support"]
         bonus = sum(7 for word in boost_keywords if word in translated_desc)
         
         return round(min((base_score * 0.6) + bonus, 100), 2)
     except: return 0
 
-# --- 2. PIPELINE ---
 def run_pipeline():
     print("🚀 Starting Cloud Pipeline...")
     resume_text = get_resume_text(RESUME_PATH)
     if not resume_text: return
 
-    # Fetch Jobs
+
     all_jobs = []
     roles = ["IT Specialist", "IT Support"]
     for role in roles:
