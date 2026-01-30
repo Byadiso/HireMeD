@@ -29,8 +29,8 @@ A sophisticated Python-based automation pipeline that uses **Natural Language Pr
 1. **Sourcing:** The script fetches live job data from Adzuna APIs.
 2. **Scraping:** Headless Chromium (**Playwright**) extracts full job descriptions, bypassing superficial snippets and handling complex redirects.
 3. **Cross-Language Match:** Integrated `deep-translator` converts Polish descriptions to English in real-time to match my English resume.
-4. **Scoring:** An NLP algorithm calculates the **Cosine Similarity** between my resume and the job requirements, applying weighted bonuses for key technical skills like Python, SQL, and Active Directory.
-5. **Alerting:** High-match roles (Score > 50%) are instantly pushed to my mobile via a custom **Telegram Bot**.
+4. **Scoring:** An NLP algorithm calculates the **Cosine Similarity** between provided resume and the job requirements, applying weighted bonuses for key technical skills like Python, SQL, and Active Directory.
+5. **Alerting:** High-match roles (Score > 50%) are instantly pushed to the mobile via a custom **Telegram Bot**.
 6. **Persistence:** Data is logged into an Excel database, which powers a live analytics dashboard.
 
 ---
@@ -48,10 +48,10 @@ This project is deployed using **GitHub Actions**. It runs on a headless Ubuntu 
 
 ## 🚀 Impact
 
-By treating my job search as a technical engineering problem, I:
-- **Reduced manual search time by 90%.**
-- **Eliminated language barriers** between my EN resume and PL job postings.
-- **Improved accuracy** by focusing only on roles where my technical background provides the highest value.
+By treating the job search as a technical engineering problem, you will:
+- **Reduce manual search time by 90%.**
+- **Eliminate language barriers** between  EN resume and PL job postings.
+- **Improve accuracy** by focusing only on roles where technical background provides the highest value.
 
 ---
 
