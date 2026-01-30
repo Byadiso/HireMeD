@@ -11,8 +11,9 @@ with st.sidebar:
     st.markdown("### Contact Details")
     st.write("📧 byadiso@gmail.com")
     st.write("🔗 [My LinkedIn Profile](https://www.linkedin.com/in/desire-byamungu-5b0785a1/)")
+    st.write("🔗 [My Portfolio](https://portfolio-deso.netlify.app/)")
     
-    # DYNAMIC RESUME DOWNLOAD
+    
     resume_file = "my_resume.pdf"
     if os.path.exists(resume_file):
         with open(resume_file, "rb") as f:
